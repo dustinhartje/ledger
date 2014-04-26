@@ -21,10 +21,10 @@ if (mysqli_connect_errno()) {
 
 
 function drawqueryresults($connection,$query) {
-  echo '<h1>' . $query . '</h1>';
+  echo '<h3><font color=blue>' . $query . '</font></h3>';
   $r = mysqli_query($connection,$query);
   $fields = mysqli_fetch_fields($r);
-  echo '<table border="1"><tr>';
+  echo '<table border="1" cellpadding="5" cellspacing="0"><tr>';
   foreach ($fields as $f) {
     echo '<th>' . $f->name . '</th>';
   }
